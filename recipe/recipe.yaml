@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: strsimpy
-  version: "0.1.9"
+  version: "0.2.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 23b4820fad5584ddf1b4701d2e9b82a06b5f4db009ee7f816fd5694901655259
+  sha256: 0842eb57f7af86c882a59a1bc8721ec2580a267e563fd0503ced2972040372c9
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
