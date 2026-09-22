@@ -1,21 +1,20 @@
 schema_version: 1
 
 context:
-  name: strsimpy
-  version: "0.2.1"
+  version: 0.2.1
 
 package:
-  name: ${{ name|lower }}
+  name: strsimpy
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+- url: https://files.pythonhosted.org/packages/source/s/strsimpy/strsimpy-${{ version }}.tar.gz
   sha256: 0842eb57f7af86c882a59a1bc8721ec2580a267e563fd0503ced2972040372c9
 
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
